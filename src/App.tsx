@@ -1,26 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Plants } from './Componentes/Plants';
 
-function App() {
+
+const App: React.FC = () => {
+  const users1 = [{ id: 1, title: '', description: '', imgURL: '', quantity: 10, }];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <h3>Lista de Plantitas</h3>
+      {users1.map((user) => <Plants key={user.id} id={user.id} title={user.title} description={user.description} imgURL={user.imgURL} quantity={user.quantity} />)}
     </div>
   );
 }
-
 export default App;
